@@ -31,11 +31,11 @@ ALIGN(RT_ALIGN_SIZE)
 /* defined the LED4 pin: PD15 */
 #define LED4_PIN    GET_PIN(D, 15)
 
-#defien DIR_PIN     GET_PIN(B, 3)
-#defien RESET_PIN     GET_PIN(B, 4)
-#defien RESET_PIN_FSH     GET_PIN(B, 5)
-#defien START_PIN     GET_PIN(B, 6)
-#defien SYS_RESET_PIN     GET_PIN(B, 7)
+#define DIR_PIN     GET_PIN(B, 3)
+#define RESET_PIN     GET_PIN(B, 4)
+#define RESET_PIN_FSH     GET_PIN(B, 5)
+#define START_PIN     GET_PIN(B, 6)
+#define SYS_RESET_PIN     GET_PIN(B, 7)
     uint32_t Speed = 200;
 uint16_t PressureData[4096];
 /*
@@ -134,7 +134,7 @@ static void led2_thread_entry(void* parameter)
 	#define PWM_DEV_CHANNEL     1       /* PWM通道 */
 	
 	#define ADC_DEV_NAME        "adc1"  /* ADC 设备名称 */
-	#define ADC_DEV_CHANNEL     5       /* ADC 通道 */
+	#define ADC_DEV_CHANNEL     0       /* ADC 通道 */
 	#define REFER_VOLTAGE       330         /* 参考电压 3.3V,数据精度乘以100保留2位小数*/
 	#define CONVERT_BITS        (1 << 12)   /* 转换位数为12位 */
 
@@ -165,7 +165,7 @@ static void led2_thread_entry(void* parameter)
 //	vol = value * REFER_VOLTAGE / CONVERT_BITS;
 //	rt_kprintf("the voltage is :%d.%02d \n", vol / 100, vol % 100);
   uint8_t status = 0;
-  uint8_t start_gether;
+//  uint8_t start_gether;
   uint32_t counter;
     while (1)
     {        
@@ -188,7 +188,7 @@ static void led2_thread_entry(void* parameter)
           break;
           case 1://运动状态
              PressureData[counter++] = value; // 采集曲线
-             if(value > = 2048) // 到达压力阈值
+             if(value >= 2048) // 到达压力阈值
              {
                 /* 关闭设备通道 */
                 rt_pwm_disable(pwm_dev,PWM_DEV_CHANNEL); // 关闭电机

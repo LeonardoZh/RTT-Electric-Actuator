@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "E:\Chip_ARTERY_Files\rt-thread\bsp\at32\at32f403a-start\settings\project.rt-thread.general.xcl" --backend -f "E:\Chip_ARTERY_Files\rt-thread\bsp\at32\at32f403a-start\settings\project.rt-thread.driver.xcl" 
+"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "E:\Chip_ARTERY_Files\RTT-Electric-Actuator\bsp\at32\at32f403a-start\settings\project.rt-thread.general.xcl" --backend -f "E:\Chip_ARTERY_Files\RTT-Electric-Actuator\bsp\at32\at32f403a-start\settings\project.rt-thread.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "E:\Chip_ARTERY_Files\rt-thread\bsp\at32\at32f403a-start\settings\project.rt-thread.general.xcl" "--debug_file=%~1" --backend -f "E:\Chip_ARTERY_Files\rt-thread\bsp\at32\at32f403a-start\settings\project.rt-thread.driver.xcl" 
+"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "E:\Chip_ARTERY_Files\RTT-Electric-Actuator\bsp\at32\at32f403a-start\settings\project.rt-thread.general.xcl" "--debug_file=%~1" --backend -f "E:\Chip_ARTERY_Files\RTT-Electric-Actuator\bsp\at32\at32f403a-start\settings\project.rt-thread.driver.xcl" 
 
 @echo off 
 :end
